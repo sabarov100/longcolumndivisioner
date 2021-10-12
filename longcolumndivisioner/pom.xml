@@ -4,4 +4,18 @@
   <artifactId>longcolumndivisioner</artifactId>
   <version>0.0.1-SNAPSHOT</version>
   <name>LongColumnDivisioner</name>
+  <dependencies>
+  	<dependency>
+  		<groupId>app.cash.tempest</groupId>
+  		<artifactId>tempest-testing-junit5</artifactId>
+  		<version>1.5.2</version>
+  		<type>pom.sha512</type>
+  	</dependency>
+  	<dependency>
+  		<groupId>app.cash.tempest</groupId>
+  		<artifactId>tempest-testing-junit4</artifactId>
+  		<version>1.5.2</version>
+  		<type>pom.sha512</type>
+  	</dependency>
+  </dependencies>
 </project>
