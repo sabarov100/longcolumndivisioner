@@ -27,7 +27,7 @@ public class Formatter {
                 if (i != divisionData.getDivision().size() - 1) {
                     result.append("_" + divisionData.getDivision().get(i) + "\n"); 
                 } else {
-                    result.append(" " + divisionData.getDivision().get(i) + "\n");
+                    result.append(" " + divisionData.getDivision().get(i));
                 }
                 
             } else {

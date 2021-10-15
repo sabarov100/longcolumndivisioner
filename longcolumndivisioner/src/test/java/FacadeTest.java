@@ -26,7 +26,7 @@ class FacadeTest {
             + "   _25\n"
             + "    24\n"
             + "    --\n"
-            + "     1\n";
+            + "     1";
     
     private static String WITH_REMAINDER_EXPECTED_TWO = ""
             + "_234142355|453\n"
@@ -54,7 +54,7 @@ class FacadeTest {
             + "    _225\n"
             + "     225\n"
             + "     ---\n"
-            + "         0\n";
+            + "         0";
      
     @Test
      void testWithRemainderLongColumnDivision() {
