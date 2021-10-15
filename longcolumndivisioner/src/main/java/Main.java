@@ -1,12 +1,13 @@
-import java.util.Scanner;
 
 public class Main {
 
     public static void main(String[] args) {
-            
-        LongColumnDivisioner longColumnDivisioner = new LongColumnDivisioner();
-        System.out.println(longColumnDivisioner.longColumnDivision(405022500, 45));
-
+        
+        Facade facade = new Facade();   
+        facade.printColumnDivision(234142355, 453);
+        facade.printColumnDivision(405022500, 45);
+        facade.printColumnDivision(78945, 4);
+        
     }
 
 }
