@@ -10,7 +10,7 @@ public class Formatter {
             str = 0;
         }
         StringBuilder result = new StringBuilder();
-        result.append(hatColumn(divisionData));
+        result.append(headerOfColumn(divisionData));
         
         for (int i = 2; i < divisionData.getDivision().size(); i++) {
             if (divisionData.getDivision().get(i) == 0 && i % 2 != 0) {
@@ -37,13 +37,13 @@ public class Formatter {
           }
         
         if (divisionData.getDivision().get(divisionData.getDivision().size() - 1) == 0) {
-            result.append(spaces(String.valueOf(divisionData.getDivident()).length()) + "0"); 
+            result.append(spaces(String.valueOf(divisionData.getDivident()).length()) + "0\n"); 
         }
         
         return result.toString(); 
     }
     
-    private String hatColumn(DivisionData divisionData) {
+    private String headerOfColumn(DivisionData divisionData) {
         StringBuilder resultHat = new StringBuilder();
         resultHat.append(String.format("_%s|%s\n", divisionData.getDivident(), divisionData.getDivisor()));
         String space = spaces(String.valueOf(divisionData.getDivident()).length() - String.valueOf(divisionData.getDivision().get(1)).length());
