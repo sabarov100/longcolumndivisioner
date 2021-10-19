@@ -3,12 +3,13 @@ import java.util.List;
 
 public class Calculator {
     
+    private static final String EMPTY = "";
 
     public List<Integer> divide(int dividend, int divisor) {
 
         StringBuilder reminder = new StringBuilder();
         List<Integer> divisionResult = new ArrayList<>();
-        String[] digits = String.valueOf(dividend).split("");
+        String[] digits = String.valueOf(dividend).split(EMPTY);
 
         for (int i = 0; i < digits.length; i++) {
             reminder.append(digits[i]);
