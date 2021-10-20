@@ -5,9 +5,12 @@ import java.util.ArrayList;
 import java.util.Arrays;
 
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
 import org.mockito.InjectMocks;
 import org.mockito.Mock;
 import org.mockito.Mockito;
+import org.mockito.junit.jupiter.MockitoExtension;
+@ExtendWith(MockitoExtension.class)
 
 class FormatterTest {
     
@@ -36,7 +39,7 @@ class FormatterTest {
     private Formatter formatter = new Formatter();
 
     @Test
-    void test() {
+    void testIntegerColumnDivision() {
         DivisionData divisionData = Mockito.mock(DivisionData.class);
         Mockito.when(divisionData).thenReturn(new DivisionData(234142355, 453, 
                 new ArrayList<Integer>(Arrays.asList(2341, 2265, 764, 453, 3112, 2718, 3943, 3624, 3195, 3171, 245)))
