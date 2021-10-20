@@ -35,7 +35,12 @@ public class DivisionData {
     }
 
     public void setDivision(List<Integer> division) {
-        this.division = new Calculator().divide(divident, divisor);
+        this.division = Calculator.divide(divident, divisor);
+    }
+
+    @Override
+    public String toString() {
+        return "DivisionData [divident=" + divident + ", divisor=" + divisor + ", division=" + division + "]";
     }
     
 }

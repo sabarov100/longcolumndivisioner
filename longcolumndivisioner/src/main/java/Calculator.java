@@ -3,10 +3,23 @@ import java.util.List;
 
 public class Calculator {
     
+    public Calculator(int divident, int divisor) {
+        super();
+        this.divident = divident;
+        this.divisor = divisor;
+    }
+
+    public Calculator() {
+        super();
+    }
+
+    public int divident;
+    public int divisor;
+    
     private static final String EMPTY = "";
     private static final String EXCEPTION_MESSAGE = "Divisor cannot be 0, division by zero";
 
-    public List<Integer> divide(int dividend, int divisor) {
+    public static List<Integer> divide(int dividend, int divisor) {
 
         List<Integer> divisionResult = new ArrayList<>();
         

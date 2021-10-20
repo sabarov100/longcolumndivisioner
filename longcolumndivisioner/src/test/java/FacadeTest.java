@@ -2,9 +2,20 @@ import static org.junit.Assert.assertEquals;
 
 import org.junit.Before;
 import org.junit.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
+import org.mockito.InjectMocks;
+import org.mockito.Mock;
+import org.mockito.junit.jupiter.MockitoExtension;
+@ExtendWith(MockitoExtension.class)
 
 class FacadeTest {
-     
+    
+    @Mock
+    private Formatter mockedFormatter;
+    
+    @InjectMocks
+    private Facade mockedFacade;
+    
     @Before
     private static Facade setUp() {
         return  new Facade();
@@ -26,7 +37,7 @@ class FacadeTest {
             + "   _25\n"
             + "    24\n"
             + "    --\n"
-            + "     1";
+            + "     1\n";
     
     private static String WITH_REMAINDER_EXPECTED_TWO = ""
             + "_234142355|453\n"
@@ -44,7 +55,7 @@ class FacadeTest {
             + "    _3195\n"
             + "     3171\n"
             + "     ----\n"
-            + "      245";
+            + "      245\n";
     
     
     private static String WITHOUT_REMAINDER_EXPECTED = ""
@@ -54,7 +65,7 @@ class FacadeTest {
             + "    _225\n"
             + "     225\n"
             + "     ---\n"
-            + "         0";
+            + "         0\n";
      
     @Test
      void testWithRemainderLongColumnDivision() {

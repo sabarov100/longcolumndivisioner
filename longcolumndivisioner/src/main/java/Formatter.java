@@ -55,12 +55,13 @@ public class Formatter {
     
     private String headerOfColumn(DivisionData divisionData) {
         StringBuilder resultHeader = new StringBuilder();
-        resultHeader.append(String.format(SPACE + FORMAT_SYMBOL + VERTICAL_LINE + FORMAT_SYMBOL + NEW_LINE, divisionData.getDivident(), divisionData.getDivisor()));
+        resultHeader.append(String.format(UNDERSCORE + FORMAT_SYMBOL + VERTICAL_LINE + FORMAT_SYMBOL + NEW_LINE,
+                divisionData.getDivident(), divisionData.getDivisor()));
         String space = spaces(String.valueOf(divisionData.getDivident()).length() - String.valueOf(divisionData.getDivision().get(1)).length());
         String dash = dashs(String.valueOf(divisionData.getDivident() / divisionData.getDivisor()).length());
         resultHeader.append(String.format(SPACE + FORMAT_SYMBOL + space + VERTICAL_LINE + dash + NEW_LINE, divisionData.getDivision().get(1)));
         resultHeader.append(String.format(SPACE + FORMAT_SYMBOL + space + VERTICAL_LINE + FORMAT_SYMBOL + NEW_LINE, 
-            dashs(String.valueOf(divisionData.getDivision().get(1)).length()), (divisionData.getDivident() / divisionData.getDivisor())));
+                dashs(String.valueOf(divisionData.getDivision().get(1)).length()), (divisionData.getDivident() / divisionData.getDivisor())));
         return resultHeader.toString();
     }
     
