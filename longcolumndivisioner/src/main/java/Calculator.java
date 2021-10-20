@@ -7,8 +7,24 @@ public class Calculator {
 
     public List<Integer> divide(int dividend, int divisor) {
 
-        StringBuilder reminder = new StringBuilder();
         List<Integer> divisionResult = new ArrayList<>();
+        
+        if (divisor == 0) {
+            throw new IllegalArgumentException("Divisor cannot be 0, division by zero");
+        }
+        dividend = Math.abs(dividend);
+        divisor = Math.abs(divisor);
+
+        if (dividend < divisor) {
+            divisionResult.add(0);
+            divisionResult.add(0);
+            divisionResult.add(0);
+            divisionResult.add(0);
+            return divisionResult;
+        }
+
+        
+        StringBuilder reminder = new StringBuilder();
         String[] digits = String.valueOf(dividend).split(EMPTY);
 
         for (int i = 0; i < digits.length; i++) {
