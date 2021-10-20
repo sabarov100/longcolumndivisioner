@@ -4,13 +4,14 @@ import java.util.List;
 public class Calculator {
     
     private static final String EMPTY = "";
+    private static final String EXCEPTION_MESSAGE = "Divisor cannot be 0, division by zero";
 
     public List<Integer> divide(int dividend, int divisor) {
 
         List<Integer> divisionResult = new ArrayList<>();
         
         if (divisor == 0) {
-            throw new IllegalArgumentException("Divisor cannot be 0, division by zero");
+            throw new IllegalArgumentException(EXCEPTION_MESSAGE);
         }
         dividend = Math.abs(dividend);
         divisor = Math.abs(divisor);
