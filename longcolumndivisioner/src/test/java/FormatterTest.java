@@ -41,14 +41,14 @@ class FormatterTest {
     @Test
     void testIntegerColumnDivision() {
         DivisionData divisionData = Mockito.mock(DivisionData.class);
-        Mockito.when(divisionData).thenReturn(new DivisionData(234142355, 453, 
-                new ArrayList<Integer>(Arrays.asList(2341, 2265, 764, 453, 3112, 2718, 3943, 3624, 3195, 3171, 245)))
-        );
+        Mockito.when(divisionData.getDivident()).thenReturn(234142355);
+        Mockito.when(divisionData.getDivisor()).thenReturn(453); 
+        Mockito.when(divisionData.getDivision()).thenReturn(
+                new ArrayList<Integer>(Arrays.asList(2341, 2265, 764, 453, 3112, 2718, 3943, 3624, 3195, 3171, 245)));
         
         String checking = formatter.integerColumnDivision(divisionData);
        
         assertEquals(WITH_REMAINDER_EXPECTED, checking);
-        Mockito.verify(formatter).integerColumnDivision(divisionData);
     }
 
 }
