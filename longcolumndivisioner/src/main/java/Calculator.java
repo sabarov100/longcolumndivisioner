@@ -2,42 +2,20 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Calculator {
-    
-    public Calculator(int divident, int divisor) {
-        super();
-        this.divident = divident;
-        this.divisor = divisor;
-    }
-
-    public Calculator() {
-        super();
-    }
-
-    public int divident;
-    public int divisor;
-    
+        
     private static final String EMPTY = "";
     private static final String EXCEPTION_MESSAGE = "Divisor cannot be 0, division by zero";
-
+    private static final String IA_EXCEPTION_MESSAGE_ONE = ""
+            + "The dividend the number must be in the range from -2_147_483_648 to 2_147_483_647";
+    private static final String IA_EXCEPTION_MESSAGE_TWO = ""
+            + "The divisor the number must be in the range from -2_147_483_648 to 2_147_483_647";
+    
     public static List<Integer> divide(int dividend, int divisor) {
-
-        List<Integer> divisionResult = new ArrayList<>();
-        
-        if (divisor == 0) {
-            throw new IllegalArgumentException(EXCEPTION_MESSAGE);
+        checkDivisionArguments(dividend, divisor);
+        if (Math.abs(dividend) < Math.abs(divisor)) {
+            return checkArgumentsOfDivision(dividend, divisor);
         }
-        dividend = Math.abs(dividend);
-        divisor = Math.abs(divisor);
-
-        if (dividend < divisor) {
-            divisionResult.add(0);
-            divisionResult.add(0);
-            divisionResult.add(0);
-            divisionResult.add(0);
-            return divisionResult;
-        }
-
-        
+        List<Integer> divisionResult = new ArrayList<>();  
         StringBuilder reminder = new StringBuilder();
         String[] digits = String.valueOf(dividend).split(EMPTY);
 
@@ -64,4 +42,23 @@ public class Calculator {
         }
         return divisionResult;
     }
+    
+    private static void checkDivisionArguments(int divident, int divisor) {
+        if (divisor == 0) {
+            throw new IllegalArgumentException(EXCEPTION_MESSAGE);
+        } else if(divident < -2_147_483_648 || divident > 2_147_483_647) {
+            throw new IllegalArgumentException(IA_EXCEPTION_MESSAGE_ONE);
+        } else if(divisor < -2_147_483_648 || divisor > 2_147_483_647) {
+            throw new IllegalArgumentException(IA_EXCEPTION_MESSAGE_TWO);
+        }
+    }
+    
+    private static List checkArgumentsOfDivision(int dividend, int divisor) {
+        List<Integer> divisionResult = new ArrayList<>();     
+            divisionResult.add(0);
+            divisionResult.add(0);
+            divisionResult.add(0);
+            divisionResult.add(0);
+            return divisionResult;
+        }
 }
