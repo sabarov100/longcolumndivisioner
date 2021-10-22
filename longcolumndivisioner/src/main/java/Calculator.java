@@ -6,11 +6,11 @@ public class Calculator {
     private static final String EMPTY = "";
     private static final String EXCEPTION_MESSAGE = "Divisor cannot be 0, division by zero";
     private static final String IA_EXCEPTION_MESSAGE_ONE = ""
-            + "The dividend the number must be in the range from -2_147_483_648 to 2_147_483_647";
+            + "The dividend the number must be in the range from 0 to 2_147_483_647";
     private static final String IA_EXCEPTION_MESSAGE_TWO = ""
-            + "The divisor the number must be in the range from -2_147_483_648 to 2_147_483_647";
+            + "The divisor the number must be in the range from 1 to 2_147_483_647";
     
-    public static List<Integer> divide(int dividend, int divisor) {
+    public List<Integer> divide(int dividend, int divisor) {
         checkDivisionArguments(dividend, divisor);
         if (Math.abs(dividend) < Math.abs(divisor)) {
             return checkArgumentsOfDivision(dividend, divisor);
@@ -43,17 +43,17 @@ public class Calculator {
         return divisionResult;
     }
     
-    private static void checkDivisionArguments(int divident, int divisor) {
+    private void checkDivisionArguments(int divident, int divisor) {
         if (divisor == 0) {
             throw new IllegalArgumentException(EXCEPTION_MESSAGE);
-        } else if(divident < -2_147_483_648 || divident > 2_147_483_647) {
+        } else if(divident < 0 || divident > 2_147_483_647) {
             throw new IllegalArgumentException(IA_EXCEPTION_MESSAGE_ONE);
-        } else if(divisor < -2_147_483_648 || divisor > 2_147_483_647) {
+        } else if(divisor < 1 || divisor > 2_147_483_647) {
             throw new IllegalArgumentException(IA_EXCEPTION_MESSAGE_TWO);
         }
     }
     
-    private static List checkArgumentsOfDivision(int dividend, int divisor) {
+    private List checkArgumentsOfDivision(int dividend, int divisor) {
         List<Integer> divisionResult = new ArrayList<>();     
             divisionResult.add(0);
             divisionResult.add(0);
