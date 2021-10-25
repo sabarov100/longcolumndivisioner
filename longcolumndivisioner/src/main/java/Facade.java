@@ -8,7 +8,7 @@ public class Facade {
         calculator = new Calculator();
         divisionData = new DivisionData(divident, divisor, calculator.divide(divident, divisor));
         formatter = new Formatter();
-        return formatter.integerColumnDivision(divisionData);
+        return formatter.formatColumnDivision(divisionData);
     }
 
 }

@@ -5,6 +5,7 @@ public class Main {
         
         Facade facade = new Facade(); 
         System.out.println(facade.columnDivision(78945, 4));
+        System.out.println(facade.columnDivision(25, 5));
         
          
     }
